@@ -1,0 +1,46 @@
+\documentclass[tikz]{standalone}
+\usepackage{tikz,pgfplots,pgfplotstable}
+\usepackage[numbers]{natbib}
+\usepackage{physics}
+\usepackage{siunitx}
+\usepackage[version=4]{mhchem}
+\pgfplotsset{compat = newest}
+\pgfplotsset{every axis/.append style={
+                    label style={font=\large},
+                    tick label style={font=\large},
+                    legend style={font=\large},
+                   }}
+\usepgfplotslibrary{colorbrewer}
+\usetikzlibrary{pgfplots.colorbrewer}
+\begin{document}
+    \pgfplotstableread{simulation.txt}{\simulation}  
+    \pgfplotstableread{exp.txt}{\experiment}
+    \begin{tikzpicture}
+        \begin{axis}[ 
+            xmin = 0, xmax = 15,
+            ymin = 0, ymax = 13,
+            xtick distance = 5,    
+            % ytick distance = 5,
+	    xlabel=X Value,
+	    ylabel=Y Value,
+            grid = both,
+            minor tick num = 1,
+            major grid style = {lightgray},
+            minor grid style = {lightgray!25},
+            width = 8cm, height = 6.14cm,
+            legend cell align = {left},
+            legend pos = north west,
+%	    legend columns=1,
+            transpose legend,
+        ]
+            \addplot[Set1-A, only marks, line width = 1, mark = *, error bars/.cd, y dir=both, y explicit] table [x index=0, y index=1, y error=2] {\simulation};
+            \addplot[Set1-B, only marks, line width = 1, mark = square] table [x index=0, y index=1] {\experiment};
+
+            \legend{
+	        Simulation,
+	        Exp. ~\cite{Einstein1905SR}
+	    }
+        \end{axis}
+    \end{tikzpicture}
+\input{../../../bu1.bbl}
+\end{document}

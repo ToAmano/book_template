@@ -1,0 +1,45 @@
+\documentclass[tikz]{standalone}
+\usepackage{tikz,pgfplots,pgfplotstable}
+\usepackage[numbers]{natbib}
+\usepackage{physics}
+\usepackage{siunitx}
+\usepackage[version=4]{mhchem}
+\pgfplotsset{compat = newest}
+\pgfplotsset{every axis/.append style={
+                    label style={font=\large},
+                    tick label style={font=\large},
+                    legend style={font=\large},
+                   }}
+\usepgfplotslibrary{colorbrewer}
+\usetikzlibrary{pgfplots.colorbrewer}
+\begin{document}
+    \pgfplotstableread[col sep=comma]{sample_data.txt}{\sample}
+    \begin{tikzpicture}
+        \begin{axis}[ 
+            xmin = 0, xmax = 15,
+            ymin = 0, ymax = 0.12,
+            xtick distance = 5,   
+            ytick distance = 0.04,
+	    xlabel= X label,
+	    ylabel= Y label,
+            grid = both,
+            minor tick num = 1,
+            major grid style = {lightgray},
+            minor grid style = {lightgray!25},
+            width = 8cm,
+	    tick label style={/pgf/number format/fixed},
+            legend cell align = {left},
+            legend pos = north west,
+	    legend columns=2,
+        ]
+            \addplot[Set1-C, line width = 1, mark = *] table [x index=0, y index=3] {\sample}; % green 
+            \addplot[Set1-D, line width = 1, mark = *] table [x index=0, y index=4] {\sample}; % purple
+            \addplot[Set1-A, line width = 1, mark = *] table [x index=0, y index=2] {\sample}; % orange
+            \addplot[Set1-B, line width = 1, mark = *] table [x index=0, y index=1] {\sample}; % blue
+
+            \legend{
+	        Series A, Series B, Series C, Series D
+	    }
+        \end{axis}
+    \end{tikzpicture}
+\end{document}
