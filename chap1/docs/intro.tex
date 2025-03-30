@@ -1,0 +1,35 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% This file examplifys a chapter written in a single file
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%#!latexmk main.tex
+\begin{bibunit}
+\setcounter{chapter}{0}
+\chapter{Introduction}\label{chap:1}
+
+% abstract
+\lipsum[60]
+
+\section{Introduction section 1}\label{sec:1_1}
+
+\lipsum[60]
+
+% example table
+% \input{chap1_introduction_tomohitoamano/include/table_1_1_relattivepermittivity.tex}
+
+
+\section{Introduction section 2}\label{sec:1_2}
+
+\lipsum[60]
+
+% example figure
+% \input{chap1_introduction_tomohitoamano/include/fig_1_1_mechanism.tex}
+
+\lipsum[60]
+
+
+\putbib
+\end{bibunit}
+
+% if you submit, uncomment the following and comment bibunit
+% \input{../../bu1.bbl}

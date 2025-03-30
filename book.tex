@@ -1,0 +1,87 @@
+%%%%%%%%%%%%%%%%%%%% book.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% sample root file for the chapters of your "monograph"
+%
+% Use this file as a template for your own input.
+%
+%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% RECOMMENDED %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[lualatex,graybox,envcountchap,sectrefs,11pt]{svmono} 
+
+% include preamble
+\input{setting/preamble.tex}
+\input{setting/path_setting.tex}
+
+% choose options for [] as required from the list
+% in the Reference Guide
+
+%\usepackage{mathptmx}
+%\usepackage{helvet}
+%\usepackage{courier}
+%
+\usepackage{type1cm}         
+\usepackage{makeidx}         % allows index generation
+\usepackage{graphicx}        % standard LaTeX graphics tool
+                             % when including figure files
+\usepackage{multicol}        % used for the two-column index
+% \usepackage[bottom]{foomtisc}% places footnotes at page bottom
+
+\usepackage{newtxtext}       % 
+\usepackage[varvw]{newtxmath}       % selects Times Roman as basic font
+
+% see the list of further useful packages
+% in the Reference Guide
+
+\makeindex             % used for the subject index
+                       % please use the style svind.ist with
+                       % your makeindex program
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\date{December 31, 2024}
+
+%#!latexmk main.tex
+\begin{document}
+\bibliographyunit[\chapter]
+
+\author{HogeHoge}
+\title{LaTeX Example for book using svmono class}
+
+% use for subtitle
+% \subtitle{-- Monograph --}
+\maketitle
+
+\frontmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \include{dedication}
+\include{frontmatter/docs/author.tex}
+\include{frontmatter/docs/preface.tex}
+\include{frontmatter/docs/acknowledgement.tex}
+
+\tableofcontents
+
+\mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% ============================
+% List of abbreviations/symbols
+\include{frontmatter/docs/acronym.tex}
+
+% =============================
+% introduction
+\include{chap1/docs/intro.tex}
+
+% =============================
+% chapter2 
+\include{chap2/docs/chap2.tex}
+
+% % chap3 :: conclusion
+\include{chap3/docs/conclusion.tex}
+
+% % appendix
+\input{appendixA/docs/appendixA.tex}
+
+
+\end{document}

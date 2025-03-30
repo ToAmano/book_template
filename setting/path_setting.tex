@@ -1,0 +1,27 @@
+% ======================
+%  path settings
+% figure(pgfplot), graphics, input
+%
+
+
+% for includegraphics path
+\graphicspath{{chap1/figures/}
+              {chap1/}
+              {chap2/figures/}
+              {chap2/}
+              {chap3/figures/}
+              {chap3/}
+              {appendixA/figures/}}
+
+% for input path
+% https://scrapbox.io/hada/LaTeX%E3%82%BD%E3%83%BC%E3%82%B9%E3%81%AEinput_path
+ \makeatletter
+ \providecommand*{\input@path}{}
+ \g@addto@macro\input@path{{docs/}
+                           {chap1/include/}
+                           {chap2/include/}
+                           {chap2/}
+                           {chap3/include/}
+                           {chap3/}
+                           {appendixA/include/}}
+ \makeatother

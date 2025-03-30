@@ -1,0 +1,126 @@
+% ===========================
+% preamble
+% 
+
+\usepackage[twoside,top=22.5truemm,bottom=22.5truemm,left=22.25truemm,right=22.25truemm,dvipdfmx]{geometry} % from naito-san
+
+\usepackage{lipsum}
+
+\usepackage{siunitx}
+\usepackage{hhline}
+\usepackage{mathrsfs}
+
+% for pdf 
+\usepackage{graphicx}
+\usepackage{color}
+
+% 
+\usepackage{adjustbox}
+\usepackage{dcolumn}
+\usepackage{bm}% bold math
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{afterpage}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}
+\usepackage{ulem}
+\usepackage{physics}
+\usepackage[nohyperlinks,nolist]{acronym} % abbreviation
+
+%https://stackoverflow.com/questions/2854299/getting-subsection-to-list-in-table-of-contents-in-latex
+\setcounter{tocdepth}{2}
+
+% https://mathlandscape.com/latex-underline/
+\usepackage{ulem}
+\usepackage{here} % force figures Here.
+\usepackage{caption}
+\usepackage[subrefformat=parens]{subcaption}
+%\usepackage{floatrow}
+%\usepackage[export]{adjustbox}
+\usepackage[version=4]{mhchem}
+
+% for tikz 
+\usepackage{tikz, pgf, pgfplots, pgfplotstable}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{math,calc}
+\pgfplotsset{compat = newest}
+\usepgfplotslibrary{groupplots} % LATEX and plain TEX
+\pgfplotsset{compat = newest}
+\usepgfplotslibrary{colorbrewer}
+\usetikzlibrary{pgfplots.colorbrewer}
+
+\usepackage{multirow}
+
+\usepackage[subpreambles=true,sort=true]{standalone}
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\arraycolsep=0.0em
+\setlength{\abovecaptionskip}{0mm}
+\setlength{\belowcaptionskip}{0mm}
+\usepackage{caption} 
+\captionsetup[table]{skip=8pt}
+\captionsetup[figure]{skip=4pt}
+%\setlength{\MidlineHeight}{2pt}
+
+
+\usepackage{comment}
+
+% for bibtex
+\usepackage[square,numbers,sort&compress]{natbib}
+%% \usepackage[sectionbib]{chapterbib}  
+% \usepackage[natbib,style=phys,refsection=chapter]{biblatex}
+% \addbibresource{references/ref.bib}
+
+ % revtex4-2 は natbib を中で usepackage している
+ % square : [] で囲む
+ % numbers : 通し番号で表現
+ % sort&compress : 連続する文献はハイフンでつなぐ
+
+% setting for bib by chapter
+\usepackage{bibunits}
+\bibliographystyle{spphys} 
+\defaultbibliographystyle{spphys} 
+\defaultbibliography{references/ref}
+
+% revtex4-2 は natbib を中で usepackage している
+% square : [] で囲む
+% numbers : 通し番号で表現
+% sort&compress : 連続する文献はハイフンでつなぐ
+
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}
+% \AddToHook{begindocument/before}{\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}}
+\usepackage{cleveref}
+\crefname{equation}{Eq.}{Eq.}% {環境名}{単数形}{複数形} \crefで引くときの表示
+\crefname{figure}{Fig.}{Fig.}% {環境名}{単数形}{複数形} \crefで引くときの表示
+\crefname{table}{Table}{Table}% {環境名}{単数形}{複数形} \crefで引くときの表示
+\crefname{section}{Sec.}{Sec.}% {環境名}{単数形}{複数形} \crefで引くときの表示
+\crefname{appendix}{Appendix}{Appendix}% {環境名}{単数形}{複数形} \Crefで引くときの表示
+
+\Crefname{equation}{Equation}{Equation}% {環境名}{単数形}{複数形} \Crefで引くときの表示
+\Crefname{figure}{Figure}{Figure}% {環境名}{単数形}{複数形} \Crefで引くときの表示
+\Crefname{table}{Table}{Table}% {環境名}{単数形}{複数形} \Crefで引くときの表示
+\Crefname{section}{Section}{Section}% {環境名}{単数形}{複数形} \Crefで引くときの表示
+\Crefname{appendix}{Appendix}{Appendix}% {環境名}{単数形}{複数形} \Crefで引くときの表示
+
+
+\newcommand{\ph}{\phantom{0}}
+
+\renewcommand{\topfraction}{1.0}
+\renewcommand{\bottomfraction}{1.0}
+\renewcommand{\dbltopfraction}{1.0}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.9}
+\renewcommand{\dblfloatpagefraction}{0.9}
+
+
+
+
+
+
+
+
+
